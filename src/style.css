@@ -8,3 +8,9 @@
     background-image: url("resources/background_image.jpg");
     background-size: cover;
 }
+
+.boy{
+    height: 300px;
+    margin-top: 450px;
+
+}
