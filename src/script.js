@@ -53,4 +53,19 @@ function  runAnimationStart(){
 
         }
 
+        if(moveBackgroundAnimationId==0){
+            moveBackgroundAnimationId= setInterval(moveBackground,100);
+
+        }
+
+
+
     }
+
+    var backgroundImagePositionX=0;
+moveBackgroundAnimationId=0;
+    function moveBackground(){
+        backgroundImagePositionX = backgroundImagePositionX-20;
+        document.getElementById("background").style.backgroundPositionX=backgroundImagePositionX+"px";
+
+}
