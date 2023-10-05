@@ -49,11 +49,11 @@ boyMarginTop = 410;
         jumpImageNumber=jumpImageNumber+1;
 
         if(jumpImageNumber <= 6){
-            boyMarginTop = boyMarginTop - 30 ;
+            boyMarginTop = boyMarginTop - 20;
             boy.style.marginTop = boyMarginTop + "px";
         }
         if(jumpImageNumber >=7 ){
-            boyMarginTop = boyMarginTop + 30 ;
+            boyMarginTop = boyMarginTop + 20 ;
             boy.style.marginTop = boyMarginTop + "px";
         }
 
@@ -83,40 +83,68 @@ function jumpAnimationStart(){
 // enter=13
         //space=32
         var keyCode=event.which;
+
         if(keyCode == 13){
-            if(runAnimationNumber == 0){
-                runAnimationStart();
-            }
+
+                  if(runAnimationNumber == 0){
+                           runAnimationStart();
+                  }
 
 
+                  if(moveBackgroundAnimationId==0){
+                          moveBackgroundAnimationId= setInterval(moveBackground,100);
 
-        if(moveBackgroundAnimationId==0){
-            moveBackgroundAnimationId= setInterval(moveBackground,100);
-
-        }
-
-        }
-
-        if(keyCode==32){
-            if (jumpAnimationNumber==0){
-                jumpAnimationStart();
-            }
-            if(moveBackgroundAnimationId==0){
-                moveBackgroundAnimationId= setInterval(moveBackground,100);
-
-            }
+                  }
 
         }
+                    if(keyCode==32){
+
+                             if (jumpAnimationNumber==0){
+                                    jumpAnimationStart();
+                                                        }
+                             if(moveBackgroundAnimationId==0){
+                                     moveBackgroundAnimationId= setInterval(moveBackground,100);
+
+                                                              }
+
+                  }
 
 
 
 
     }
 
+
+ //-----------------------------------------------------------------------------------------------------------------------------
+
     var backgroundImagePositionX=0;
-moveBackgroundAnimationId=0;
+    moveBackgroundAnimationId=0;
+
     function moveBackground(){
         backgroundImagePositionX = backgroundImagePositionX-20;
         document.getElementById("background").style.backgroundPositionX=backgroundImagePositionX+"px";
 
+                         }
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+
+boxMarginleft = 500;
+function createBoxes() {
+
+
+    for (var i = 0; i <= 10; i++) {
+
+        var box = document.createElement("div");
+        box.className = "box";
+        document.getElementById("background").appendChild(box);
+        box.style.marginLeft = boxMarginleft + "px";
+         // boxMarginleft = boxMarginleft +500;
+
+        if(i<5){
+            boxMarginleft = boxMarginleft +750;
+        }
+        if(i>=5){
+            boxMarginleft = boxMarginleft +500;
+        }
+    }
 }
